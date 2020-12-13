@@ -15,19 +15,19 @@ services:
       MYSQL_USER: docker
       MYSQL_PASSWORD: docker
       
-nginx:
-    build: nginx
-    ports:
-        - "8000:80"
-    links:
-        - server1
-        - server2
+  nginx:
+      build: nginx
+      ports:
+          - "8000:80"
+      links:
+          - server1
+          - server2
 
-server1:
-    build: server1
+  server1:
+      build: server1
 
-server2:
-    build: server2
+  server2:
+      build: server2
 
 volumes:
   percona-data:
