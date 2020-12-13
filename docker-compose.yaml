@@ -1,0 +1,33 @@
+
+version: '3.1'
+
+services:
+  percona:
+    image: percona:ps-8
+    restart: always
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - "percona-data:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: docker
+      MYSQL_DATABASE: docker
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+      
+nginx:
+    build: nginx
+    ports:
+        - "8000:80"
+    links:
+        - server1
+        - server2
+
+server1:
+    build: server1
+
+server2:
+    build: server2
+
+volumes:
+  percona-data:
