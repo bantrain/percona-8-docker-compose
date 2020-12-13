@@ -6,4 +6,4 @@ RUN mkdir serverroot
 COPY index.html serverroot/
 
 WORKDIR /serverroot
-CMD python -m SimpleHTTPServer
+CMD python3 -m SimpleHTTPServer
