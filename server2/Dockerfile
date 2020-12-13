@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-RUN apt-get install -y python
+RUN apt-get install -y python3
 RUN mkdir serverroot
  
 COPY index.html serverroot/
